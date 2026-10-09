@@ -1,0 +1,37 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "vite src",
+    "lint": "biome lint .",
+    "format": "biome format --write . && dprint fmt && rumdl fmt . && tombi format .",
+    "format:check": "biome ci --formatter-enabled=true --linter-enabled=false --assist-enabled=false . && dprint check && rumdl check . && tombi format --check .",
+    "deps:audit": "npm audit",
+    "deps:check": "npm outdated",
+    "deps:update": "npm update",
+    "deps:sync": "npm install --package-lock-only",
+    "mise:trust": "mise trust",
+    "mise:setup": "mise install && mise exec -- npm ci"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.x",
+    "@dprint/json": "^0.x",
+    "dprint": "^0.x",
+    "dprint-plugin-markup": "^0.x",
+    "dprint-plugin-yaml": "^0.x",
+    "rumdl": "^0.x",
+    "vite": "^8.x",
+    "tombi": "^1.x"
+  },
+  "engines": {
+    "node": "^24"
+  },
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^24"
+    }
+  },
+  "allowScripts": {
+    "dprint": true
+  }
+}

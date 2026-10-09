@@ -1,22 +1,10 @@
 {
-  "$schema": "https://dprint.dev/schemas/v0.json",
-  "excludes": ["src/vendor/**", "node_modules/**"],
+  "lineWidth": 120,
+  "excludes": ["**/node_modules", "**/*-lock.json", "src/vendor/**"],
   "plugins": [
-    "https://plugins.dprint.dev/g-plane/pretty_yaml-v0.6.0.wasm",
-    "https://plugins.dprint.dev/g-plane/markup_fmt-v0.27.3.wasm"
-  ],
-  "yaml": {
-    "indentWidth": 2,
-    "printWidth": 100
-  },
-  "markup": {
-    "printWidth": 100,
-    "useTabs": false,
-    "indentWidth": 2,
-    "lineBreak": "lf",
-    "closingBracketSameLine": false,
-    "preferAttrsSingleLine": false,
-    "singleAttrSameLine": false,
-    "quotes": "double"
-  }
+    "npm:@dprint/json@0.24.0",
+    "npm:dprint-plugin-markup@0.27.3",
+    "npm:dprint-plugin-yaml@0.6.0",
+    "npm:@dprint/markdown@0.24.0"
+  ]
 }

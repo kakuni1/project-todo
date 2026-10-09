@@ -1,25 +1,5 @@
-[tools]
-"node" = "lts"
-"biome" = "latest"
-"dprint" = "latest"
-"npm:serve" = "latest"
+[settings]
+idiomatic_version_file_enable_tools = ["node"]
 
-[tasks.dev]
-description = "Start dev server with serve"
-run = "serve --no-clipboard src/"
-
-[tasks.fmt]
-description = "Auto-format source files"
-run = "biome check --write . && dprint fmt"
-
-[tasks.fmt-check]
-description = "Check formatting only"
-run = "biome ci . && dprint check"
-
-[tasks.lint]
-description = "Lint source files"
-run = "biome lint ."
-
-[tasks.ci]
-description = "Run all CI checks"
-depends = ["fmt-check", "lint"]
+[env]
+_.path = ["{{config_root}}/node_modules/.bin"]

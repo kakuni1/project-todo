@@ -9,16 +9,23 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: jdx/mise-action@v2
-      - run: mise run ci
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: package.json
+          cache: npm
+
+      - run: npm ci
+      - run: npm run format:check
+      - run: npm run lint
 
   deploy:
     needs: ci
@@ -29,7 +36,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: "src/"
       - id: deployment
