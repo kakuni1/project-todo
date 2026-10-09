@@ -19,8 +19,8 @@
     "dprint-plugin-markup": "^0.x",
     "dprint-plugin-yaml": "^0.x",
     "rumdl": "^0.x",
-    "vite": "^8.x",
-    "tombi": "^1.x"
+    "tombi": "^1.x",
+    "vite": "^8.x"
   },
   "engines": {
     "node": "^24"

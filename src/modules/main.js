@@ -176,9 +176,7 @@ function renderTasks(ul, folder) {
       break;
     }
     default:
-      filteredTasks = allTasks.filter(
-        (t) => t.parent === folder.parent && t.folder === folder.name,
-      );
+      filteredTasks = allTasks.filter((t) => t.parent === folder.parent && t.folder === folder.name);
       break;
   }
 

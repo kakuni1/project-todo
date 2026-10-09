@@ -29,9 +29,7 @@ export function createSidebar(sectionNames) {
     // Projects, extra icon for optional delete
     for (const item of items) {
       if (item.parent === section)
-        list.appendChild(
-          createListItem(item.icon, item.name, { deletable: section === "Projects" }),
-        );
+        list.appendChild(createListItem(item.icon, item.name, { deletable: section === "Projects" }));
     }
 
     const header = document.createElement("div");
